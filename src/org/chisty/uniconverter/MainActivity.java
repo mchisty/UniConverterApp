@@ -14,22 +14,44 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MainActivity.
+ */
 public class MainActivity extends Activity {
+	
+	/** The current measure. */
 	private String currentMeasure = "";
+	
+	/** The left unit type. */
 	private String leftUnitType = "";
+	
+	/** The right unit type. */
 	private String rightUnitType = "";
+	
+	/** The right unit spinner. */
 	private Spinner spinner, leftUnitSpinner, rightUnitSpinner;
+	
+	/** The to unit txt. */
 	private EditText fromUnitTxt, toUnitTxt;
+	
+	/** The obj right. */
 	private Object objLeft, objRight;
+	
+	/** The adapter. */
 	private LabelValueAdapter adapter;
+	
+	/** The unit array str. */
 	String[] unitArrayStr = { "WEIGHT", "LENGTH", "AREA", "ENERGY", "TEMPERATURE", "SPEED", "PRESSURE", "POWER", "VOLUME", "TIME" };
 
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onCreate(android.os.Bundle)
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		spinner = (Spinner) findViewById(R.id.spinner);
-		// adapter = new LabelValueAdapter(this, R.layout.custom_spinner);
 		leftUnitSpinner = (Spinner) findViewById(R.id.spinnerLeft);
 		rightUnitSpinner = (Spinner) findViewById(R.id.spinnerRight);
 		fromUnitTxt = (EditText) findViewById(R.id.fromUnitTxt);
@@ -97,12 +119,18 @@ public class MainActivity extends Activity {
 		});
 	}
 
+	/**
+	 * Calculate.
+	 */
 	private void calculate() {
 		StringBuffer s = new StringBuffer(fromUnitTxt.getText());
 		String result = getConvertedUnitValueAsText(s.toString());
 		toUnitTxt.setText(result);
 	}
 
+	/**
+	 * Populate left right spinners.
+	 */
 	// TODO
 	private void populateLeftRightSpinners() {
 		if (currentMeasure.equals("WEIGHT")) {
@@ -142,6 +170,12 @@ public class MainActivity extends Activity {
 	// // LabelValue lv = new LabelValue(t.getLabel(), s.name());
 	// // adapter.add(lv);
 	// }
+	/**
+	 * Gets the converted unit value as text.
+	 *
+	 * @param sourceUnitAsText the source unit as text
+	 * @return the converted unit value as text
+	 */
 	// }
 	private String getConvertedUnitValueAsText(String sourceUnitAsText) {
 		BigDecimal sourceAmount = new BigDecimal(sourceUnitAsText);
@@ -171,6 +205,9 @@ public class MainActivity extends Activity {
 		return targetAmount.toPlainString();
 	}
 
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -178,6 +215,9 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
+	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle action bar item clicks here. The action bar will
