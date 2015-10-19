@@ -2,6 +2,8 @@ package org.chisty.uniconverter;
 
 import java.math.BigDecimal;
 
+import android.util.Log;
+
 /**
  * The Class WeightManager.
  */
@@ -72,7 +74,8 @@ public class WeightManager {
 	 *            the amount
 	 * @return the converted amount
 	 */
-	public static BigDecimal getConvertedAmount(WeightTypeEnum sourceType, WeightTypeEnum targetType, BigDecimal amount) {
+	public static BigDecimal getConvertedAmount(WeightTypeEnum sourceType, WeightTypeEnum targetType,
+			BigDecimal amount) {
 		BigDecimal updatedAmount = null;
 		if (sourceType == targetType) {
 			return amount;
@@ -176,7 +179,8 @@ public class WeightManager {
 				updatedAmount = amount.multiply(POUND_TO_OUNCH);
 			}
 		}
-		return updatedAmount;
+		Log.d("WeightManager", "updatedAmount: " + updatedAmount);
+		return updatedAmount.abs(Constant.MC);
 	}
 
 	/**

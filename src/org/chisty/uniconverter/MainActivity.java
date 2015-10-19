@@ -14,37 +14,41 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class MainActivity.
  */
 public class MainActivity extends Activity {
-	
+
 	/** The current measure. */
 	private String currentMeasure = "";
-	
+
 	/** The left unit type. */
 	private String leftUnitType = "";
-	
+
 	/** The right unit type. */
 	private String rightUnitType = "";
-	
+
 	/** The right unit spinner. */
 	private Spinner spinner, leftUnitSpinner, rightUnitSpinner;
-	
+
 	/** The to unit txt. */
 	private EditText fromUnitTxt, toUnitTxt;
-	
+
 	/** The obj right. */
 	private Object objLeft, objRight;
-	
+
 	/** The adapter. */
 	private LabelValueAdapter adapter;
-	
-	/** The unit array str. */
-	String[] unitArrayStr = { "WEIGHT", "LENGTH", "AREA", "ENERGY", "TEMPERATURE", "SPEED", "PRESSURE", "POWER", "VOLUME", "TIME" };
 
-	/* (non-Javadoc)
+	/** The unit array str. */
+	String[] unitArrayStr = { "WEIGHT", "LENGTH", "AREA", "ENERGY", "TEMPERATURE", "SPEED", "PRESSURE", "POWER",
+			"VOLUME", "TIME" };
+
+	private String oldFrom, oldTo;
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
 	@Override
@@ -55,9 +59,9 @@ public class MainActivity extends Activity {
 		leftUnitSpinner = (Spinner) findViewById(R.id.spinnerLeft);
 		rightUnitSpinner = (Spinner) findViewById(R.id.spinnerRight);
 		fromUnitTxt = (EditText) findViewById(R.id.fromUnitTxt);
-		fromUnitTxt.setText("0");
+		// fromUnitTxt.setText("");
 		toUnitTxt = (EditText) findViewById(R.id.toUnitTxt);
-		toUnitTxt.setText("0");
+		// toUnitTxt.setText("");
 		// ==========================================
 		// General adapter
 		// ==========================================
@@ -79,6 +83,8 @@ public class MainActivity extends Activity {
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 				objLeft = parent.getItemAtPosition(position); // TODO
+				// calculate();
+				// toUnitTxt.setText(calculateResult(fromUnitTxt.getText()));
 			}
 
 			@Override
@@ -91,41 +97,49 @@ public class MainActivity extends Activity {
 			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 				// TODO: Uncomment later
 				objRight = parent.getItemAtPosition(position);
-				calculate();
+				// calculate();
+				// fromUnitTxt.setText(calculateResult(toUnitTxt.getText()));
+
 			}
 
 			@Override
 			public void onNothingSelected(AdapterView<?> parent) {
 				// TODO Auto-generated method stub
+				System.out.print("Nothing");
 			}
 		});
 		// ---------------------------------------------------------
-		fromUnitTxt.setOnTouchListener(new View.OnTouchListener() {
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				return false;
-			}
-		});
 		toUnitTxt.setOnTouchListener(new View.OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
-				// TODO: Uncomment later
+				toUnitTxt.setText("");
+				// System.out.println("old From field value: " + oldFrom);
 				if (null != fromUnitTxt.getText() && fromUnitTxt.getText().length() != 0) {
-					calculate();
-					return true;
+					if (null == toUnitTxt.getText() || toUnitTxt.getText().length() == 0) {
+						calculateTo();
+						return true;
+					}
 				}
 				return false;
 			}
 		});
+
 	}
 
 	/**
 	 * Calculate.
 	 */
-	private void calculate() {
-		StringBuffer s = new StringBuffer(fromUnitTxt.getText());
-		String result = getConvertedUnitValueAsText(s.toString());
-		toUnitTxt.setText(result);
+
+	private void calculateTo() {
+		CharSequence cs = fromUnitTxt.getText();
+		if (cs.length() > 0) {
+			StringBuffer sb = new StringBuffer(cs);
+			String result = getConvertedUnitValueAsText(sb.toString());
+			toUnitTxt.setText("");
+			toUnitTxt.append(result);
+			toUnitTxt.setTextIsSelectable(true);
+			oldTo = toUnitTxt.getText().toString();
+		}
 	}
 
 	/**
@@ -134,14 +148,16 @@ public class MainActivity extends Activity {
 	// TODO
 	private void populateLeftRightSpinners() {
 		if (currentMeasure.equals("WEIGHT")) {
-			ArrayAdapter<WeightTypeEnum> strAdapter = new ArrayAdapter<>(this, R.layout.spinner_txtview, WeightTypeEnum.values());
+			ArrayAdapter<WeightTypeEnum> strAdapter = new ArrayAdapter<>(this, R.layout.spinner_txtview,
+					WeightTypeEnum.values());
 			leftUnitSpinner.setAdapter(strAdapter);
 			rightUnitSpinner.setAdapter(strAdapter);
 		} else if (currentMeasure.equals("LENGTH")) {
-			ArrayAdapter<LengthTypeEnum> strAdapter = new ArrayAdapter<>(this, R.layout.spinner_txtview, LengthTypeEnum.values());
+			ArrayAdapter<LengthTypeEnum> strAdapter = new ArrayAdapter<>(this, R.layout.spinner_txtview,
+					LengthTypeEnum.values());
 			leftUnitSpinner.setAdapter(strAdapter);
 			rightUnitSpinner.setAdapter(strAdapter);
-			// //---------------------------------------------------
+			// ---------------------------------------------------------------------
 			// adapter = new LabelValueAdapter(this, R.layout.custom_spinner);
 			// for (LengthTypeEnum s : LengthTypeEnum.values()) {
 			// LabelValue lv = new LabelValue(s.getLabel(), s.name());
@@ -149,8 +165,9 @@ public class MainActivity extends Activity {
 			// }
 			// leftUnitSpinner.setAdapter(adapter);
 			// rightUnitSpinner.setAdapter(adapter);
+			// ---------------------------------------------------------------------
 		} else if (currentMeasure.equals("SPEED")) {
-			adapter = new LabelValueAdapter(this, R.layout.custom_spinner);
+			adapter = new LabelValueAdapter(this, R.layout.spinner_txtview);
 			// adapter.clear();
 			for (SpeedTypeEnum s : SpeedTypeEnum.values()) {
 				LabelValue lv = new LabelValue(s.getLabel(), s.getValue());
@@ -164,22 +181,25 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	// private <T> void test(MyEnums<T> me) {
-	// for (T t : me.values()) {
-	// // t.getLabel();
-	// // LabelValue lv = new LabelValue(t.getLabel(), s.name());
-	// // adapter.add(lv);
-	// }
 	/**
 	 * Gets the converted unit value as text.
 	 *
-	 * @param sourceUnitAsText the source unit as text
+	 * @param sourceUnitAsText
+	 *            the source unit as text
 	 * @return the converted unit value as text
 	 */
-	// }
+
 	private String getConvertedUnitValueAsText(String sourceUnitAsText) {
+		if (null == sourceUnitAsText) {
+			Toast.makeText(getApplicationContext(), "Value is empty", Toast.LENGTH_SHORT).show();
+			return "";
+		}
+
+		sourceUnitAsText = sourceUnitAsText.trim();
+
 		BigDecimal sourceAmount = new BigDecimal(sourceUnitAsText);
-		BigDecimal targetAmount = null;
+		BigDecimal targetAmount = BigDecimal.ZERO;
+
 		String output = "";
 		if (currentMeasure.equals("WEIGHT")) {
 			WeightTypeEnum sourceEnum = (WeightTypeEnum) objLeft;
@@ -201,11 +221,14 @@ public class MainActivity extends Activity {
 			targetAmount = SpeedManager.getConvertedAmount(sourceEnum, targetEnum, sourceAmount);
 			output = sourceAmount + " " + sourceEnum.name() + " = " + targetAmount + " " + targetEnum;
 		}
-		Toast.makeText(getApplicationContext(), output, Toast.LENGTH_SHORT).show();
+		// Toast.makeText(getApplicationContext(), output,
+		// Toast.LENGTH_SHORT).show();
 		return targetAmount.toPlainString();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
 	 */
 	@Override
@@ -215,7 +238,9 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
 	 */
 	@Override

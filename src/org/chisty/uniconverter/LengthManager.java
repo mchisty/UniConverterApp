@@ -15,41 +15,41 @@ public class LengthManager {
 	/** The Constant UNIT_METER_TO_MM. */
 	public final static BigDecimal UNIT_METER_TO_MM = UNIT_METER_TO_CM.multiply(UNIT_CM_TO_MM);
 	/** The Constant UNIT_MM_TO_CM. */
-	public final static BigDecimal UNIT_MM_TO_CM = BigDecimal.ONE.divide(UNIT_CM_TO_MM, Constant.MC);
+	public final static BigDecimal UNIT_MM_TO_CM = BigDecimal.ONE.divide(UNIT_CM_TO_MM);
 	/** The Constant UNIT_MM_TO_METER. */
-	public final static BigDecimal UNIT_MM_TO_METER = BigDecimal.ONE.divide(UNIT_METER_TO_MM, Constant.MC);
+	public final static BigDecimal UNIT_MM_TO_METER = BigDecimal.ONE.divide(UNIT_METER_TO_MM);
 	/** The Constant UNIT_CM_TO_METER. */
-	public final static BigDecimal UNIT_CM_TO_METER = BigDecimal.ONE.divide(UNIT_METER_TO_CM, Constant.MC);
+	public final static BigDecimal UNIT_CM_TO_METER = BigDecimal.ONE.divide(UNIT_METER_TO_CM);
 	/** The Constant UNIT_KM_TO_CM. */
 	public final static BigDecimal UNIT_KM_TO_CM = UNIT_METER_TO_CM.multiply(UNIT_KM_TO_METER);
 	/** The Constant UNIT_CM_TO_KM. */
-	public final static BigDecimal UNIT_CM_TO_KM = BigDecimal.ONE.divide(UNIT_KM_TO_CM, Constant.MC);
+	public final static BigDecimal UNIT_CM_TO_KM = BigDecimal.ONE.divide(UNIT_KM_TO_CM);
 	/** The Constant UNIT_MILE_TO_YARD. */
 	public final static BigDecimal UNIT_MILE_TO_YARD = new BigDecimal(1760);
 	/** The Constant UNIT_MILE_TO_FT. */
 	public final static BigDecimal UNIT_MILE_TO_FT = new BigDecimal(5280);
 	/** The Constant UNIT_YARD_TO_MILE. */
-	public final static BigDecimal UNIT_YARD_TO_MILE = BigDecimal.ONE.divide(UNIT_MILE_TO_YARD, Constant.MC);
+	public final static BigDecimal UNIT_YARD_TO_MILE = BigDecimal.ONE.divide(UNIT_MILE_TO_YARD);
 	/** The Constant UNIT_YARD_TO_FEET. */
 	public final static BigDecimal UNIT_YARD_TO_FEET = new BigDecimal(3);
 	/** The Constant UNIT_FOOT_TO_INCH. */
 	public final static BigDecimal UNIT_FOOT_TO_INCH = new BigDecimal(12);
 	/** The Constant UNIT_INCH_TO_FT. */
-	public final static BigDecimal UNIT_INCH_TO_FT = BigDecimal.ONE.divide(UNIT_FOOT_TO_INCH, Constant.MC);
+	public final static BigDecimal UNIT_INCH_TO_FT = BigDecimal.ONE.divide(UNIT_FOOT_TO_INCH);
 	/** The Constant UNIT_YARD_TO_INCH. */
 	public final static BigDecimal UNIT_YARD_TO_INCH = new BigDecimal(36);
 	/** The Constant UNIT_INCH_TO_CM. */
 	public final static BigDecimal UNIT_INCH_TO_CM = new BigDecimal(2.54);
 	/** The Constant UNIT_CM_TO_INCH. */
-	public final static BigDecimal UNIT_CM_TO_INCH = BigDecimal.ONE.divide(UNIT_INCH_TO_CM, Constant.MC);
+	public final static BigDecimal UNIT_CM_TO_INCH = BigDecimal.ONE.divide(UNIT_INCH_TO_CM);
 	/** The Constant UNIT_FOOT_TO_CM. */
 	public final static BigDecimal UNIT_FOOT_TO_CM = new BigDecimal(30.48);
 	/** The Constant UNIT_CM_TO_FT. */
-	public final static BigDecimal UNIT_CM_TO_FT = BigDecimal.ONE.divide(UNIT_FOOT_TO_CM, Constant.MC);
+	public final static BigDecimal UNIT_CM_TO_FT = BigDecimal.ONE.divide(UNIT_FOOT_TO_CM);
 	/** The Constant UNIT_YARD_TO_CM. */
 	public final static BigDecimal UNIT_YARD_TO_CM = new BigDecimal(91.44);
 	/** The Constant UNIT_CM_TO_YARD. */
-	public final static BigDecimal UNIT_CM_TO_YARD = BigDecimal.ONE.divide(UNIT_YARD_TO_CM, Constant.MC);
+	public final static BigDecimal UNIT_CM_TO_YARD = BigDecimal.ONE.divide(UNIT_YARD_TO_CM);
 	/** The Constant UNIT_MILE_TO_METER. */
 	public final static BigDecimal UNIT_MILE_TO_METER = new BigDecimal(1609.344);
 	/** The Constant UNIT_MILE_TO_CM. */
@@ -57,13 +57,13 @@ public class LengthManager {
 	/** The Constant UNIT_MILE_TO_MM. */
 	public final static BigDecimal UNIT_MILE_TO_MM = UNIT_MILE_TO_CM.multiply(UNIT_CM_TO_MM);
 	/** The Constant UNIT_CM_TO_MILE. */
-	public final static BigDecimal UNIT_CM_TO_MILE = BigDecimal.ONE.divide(UNIT_MILE_TO_CM, Constant.MC);
+	public final static BigDecimal UNIT_CM_TO_MILE = BigDecimal.ONE.divide(UNIT_MILE_TO_CM);
 	/** The Constant UNIT_METER_TO_MILE. */
-	public final static BigDecimal UNIT_METER_TO_MILE = BigDecimal.ONE.divide(UNIT_MILE_TO_METER, Constant.MC);
+	public final static BigDecimal UNIT_METER_TO_MILE = BigDecimal.ONE.divide(UNIT_MILE_TO_METER);
 	/** The Constant UNIT_MILE_TO_KILOMETER. */
 	public final static BigDecimal UNIT_MILE_TO_KILOMETER = new BigDecimal(1.609344);
 	/** The Constant UNIT_KM_TO_MILE. */
-	public final static BigDecimal UNIT_KM_TO_MILE = BigDecimal.ONE.divide(UNIT_MILE_TO_KILOMETER, Constant.MC);
+	public final static BigDecimal UNIT_KM_TO_MILE = BigDecimal.ONE.divide(UNIT_MILE_TO_KILOMETER);
 	/** The Constant UNIT_METER_TO_YARD. */
 	public final static BigDecimal UNIT_METER_TO_YARD = new BigDecimal(1.0936133);
 	/** The Constant UNIT_METER_TO_FEET. */
@@ -71,13 +71,13 @@ public class LengthManager {
 	/** The Constant UNIT_METER_TO_INCH. */
 	public final static BigDecimal UNIT_METER_TO_INCH = new BigDecimal(39.37007874);
 	/** The Constant UNIT_YARD_TO_METER. */
-	public final static BigDecimal UNIT_YARD_TO_METER = BigDecimal.ONE.divide(UNIT_METER_TO_YARD, Constant.MC);
+	public final static BigDecimal UNIT_YARD_TO_METER = BigDecimal.ONE.divide(UNIT_METER_TO_YARD);
 	/** The Constant UNIT_KM_TO_YARD. */
 	public final static BigDecimal UNIT_KM_TO_YARD = new BigDecimal(1093.61329834);
 	/** The Constant UNIT_KM_TO_FT. */
 	public final static BigDecimal UNIT_KM_TO_FT = new BigDecimal(3280.83989501);
 	/** The Constant UNIT_YARD_TO_KM. */
-	public final static BigDecimal UNIT_YARD_TO_KM = BigDecimal.ONE.divide(UNIT_KM_TO_YARD, Constant.MC);
+	public final static BigDecimal UNIT_YARD_TO_KM = BigDecimal.ONE.divide(UNIT_KM_TO_YARD);
 	/** The Constant UNIT_KM_TO_MM. */
 	public final static BigDecimal UNIT_KM_TO_MM = UNIT_KM_TO_CM.multiply(UNIT_CM_TO_MM);
 
@@ -95,7 +95,7 @@ public class LengthManager {
 	 * @return the big decimal
 	 */
 	public static BigDecimal fromMileToFeet(BigDecimal mile) {
-		return mile.multiply(UNIT_MILE_TO_YARD).multiply(UNIT_YARD_TO_FEET);
+		return mile.multiply(UNIT_MILE_TO_YARD).multiply(UNIT_YARD_TO_FEET).multiply(BigDecimal.ONE);
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class LengthManager {
 	 * @return the big decimal
 	 */
 	public static BigDecimal fromMileToInches(BigDecimal mile) {
-		return fromMileToFeet(mile).multiply(UNIT_FOOT_TO_INCH);
+		return fromMileToFeet(mile).multiply(UNIT_FOOT_TO_INCH).multiply(BigDecimal.ONE);
 	}
 
 	/**
@@ -117,7 +117,7 @@ public class LengthManager {
 	 * @return the big decimal
 	 */
 	public static BigDecimal fromMileToMeter(BigDecimal mile) {
-		return mile.multiply(UNIT_MILE_TO_METER);
+		return mile.multiply(UNIT_MILE_TO_METER).multiply(BigDecimal.ONE);
 	}
 
 	/**
@@ -161,7 +161,7 @@ public class LengthManager {
 	 * @return the big decimal
 	 */
 	public static BigDecimal fromKilometerToMeter(BigDecimal kiloMeter) {
-		return kiloMeter.multiply(UNIT_KM_TO_METER);
+		return kiloMeter.multiply(UNIT_KM_TO_METER).multiply(BigDecimal.ONE);
 	}
 
 	/**
@@ -172,7 +172,7 @@ public class LengthManager {
 	 * @return the big decimal
 	 */
 	public static BigDecimal fromKilometerToCentimeter(BigDecimal kiloMeter) {
-		return kiloMeter.multiply(UNIT_KM_TO_METER).multiply(UNIT_METER_TO_CM);
+		return kiloMeter.multiply(UNIT_KM_TO_METER).multiply(UNIT_METER_TO_CM).multiply(BigDecimal.ONE);
 	}
 
 	/**
@@ -282,7 +282,7 @@ public class LengthManager {
 	 * @return the big decimal
 	 */
 	public static BigDecimal fromKilometerToInches(BigDecimal km) {
-		return km.multiply(UNIT_KM_TO_FT).multiply(UNIT_FOOT_TO_INCH);
+		return km.multiply(UNIT_KM_TO_FT).multiply(UNIT_FOOT_TO_INCH).multiply(BigDecimal.ONE);
 	}
 
 	/**
@@ -326,7 +326,7 @@ public class LengthManager {
 	 * @return the big decimal
 	 */
 	public static BigDecimal fromMeterToMillimeter(BigDecimal meter) {
-		return meter.multiply(UNIT_METER_TO_CM).multiply(UNIT_CM_TO_MM);
+		return meter.multiply(UNIT_METER_TO_CM).multiply(UNIT_CM_TO_MM).multiply(BigDecimal.ONE);
 	}
 
 	/**
@@ -337,7 +337,7 @@ public class LengthManager {
 	 * @return the big decimal
 	 */
 	public static BigDecimal fromInchToMillimeter(BigDecimal inch) {
-		return inch.multiply(UNIT_INCH_TO_CM).multiply(UNIT_CM_TO_MM);
+		return inch.multiply(UNIT_INCH_TO_CM).multiply(UNIT_CM_TO_MM).multiply(BigDecimal.ONE);
 	}
 
 	/**
@@ -351,7 +351,8 @@ public class LengthManager {
 	 *            the amount
 	 * @return the converted amount
 	 */
-	public static BigDecimal getConvertedAmount(LengthTypeEnum sourceType, LengthTypeEnum targetType, BigDecimal amount) {
+	public static BigDecimal getConvertedAmount(LengthTypeEnum sourceType, LengthTypeEnum targetType,
+			BigDecimal amount) {
 		BigDecimal updatedAmount = null;
 		if (sourceType == targetType) {
 			return amount;
@@ -392,7 +393,7 @@ public class LengthManager {
 			if (LengthTypeEnum.MILE == targetType) {
 				updatedAmount = fromMeterToMile(amount);
 			} else if (LengthTypeEnum.KILOMETER == targetType) {
-				updatedAmount = BigDecimal.ONE.divide(amount.multiply(UNIT_KM_TO_METER), Constant.MC);
+				updatedAmount = BigDecimal.ONE.divide(amount.multiply(UNIT_KM_TO_METER));
 			} else if (LengthTypeEnum.CENTIMETER == targetType) {
 				updatedAmount = fromMeterToCentimeter(amount);
 			} else if (LengthTypeEnum.YARD == targetType) {
@@ -438,15 +439,15 @@ public class LengthManager {
 			}
 		} else if (sourceType == LengthTypeEnum.FOOT) {
 			if (LengthTypeEnum.MILE == targetType) {
-				updatedAmount = BigDecimal.ONE.divide(amount.multiply(UNIT_MILE_TO_FT), Constant.MC);
+				updatedAmount = BigDecimal.ONE.divide(amount.multiply(UNIT_MILE_TO_FT));
 			} else if (LengthTypeEnum.KILOMETER == targetType) {
-				updatedAmount = BigDecimal.ONE.divide(amount.multiply(UNIT_KM_TO_FT), Constant.MC);
+				updatedAmount = BigDecimal.ONE.divide(amount.multiply(UNIT_KM_TO_FT));
 			} else if (LengthTypeEnum.METER == targetType) {
-				updatedAmount = BigDecimal.ONE.divide(amount.multiply(UNIT_METER_TO_FEET), Constant.MC);
+				updatedAmount = BigDecimal.ONE.divide(amount.multiply(UNIT_METER_TO_FEET));
 			} else if (LengthTypeEnum.CENTIMETER == targetType) {
 				updatedAmount = amount.multiply(UNIT_FOOT_TO_CM);
 			} else if (LengthTypeEnum.YARD == targetType) {
-				updatedAmount = BigDecimal.ONE.divide(UNIT_YARD_TO_FEET, Constant.MC);
+				updatedAmount = BigDecimal.ONE.divide(UNIT_YARD_TO_FEET);
 			} else if (LengthTypeEnum.INCHES == targetType) {
 				updatedAmount = amount.multiply(UNIT_FOOT_TO_INCH);
 			} else if (LengthTypeEnum.MILLIMETER == targetType) {
@@ -454,15 +455,15 @@ public class LengthManager {
 			}
 		} else if (sourceType == LengthTypeEnum.INCHES) {
 			if (LengthTypeEnum.MILE == targetType) {
-				updatedAmount = BigDecimal.ONE.divide(fromMileToInches(amount), Constant.MC);
+				updatedAmount = BigDecimal.ONE.divide(fromMileToInches(amount));
 			} else if (LengthTypeEnum.KILOMETER == targetType) {
-				updatedAmount = BigDecimal.ONE.divide(fromKilometerToInches(amount), Constant.MC);
+				updatedAmount = BigDecimal.ONE.divide(fromKilometerToInches(amount));
 			} else if (LengthTypeEnum.METER == targetType) {
-				updatedAmount = BigDecimal.ONE.divide(fromMeterToInches(amount), Constant.MC);
+				updatedAmount = BigDecimal.ONE.divide(fromMeterToInches(amount));
 			} else if (LengthTypeEnum.CENTIMETER == targetType) {
 				updatedAmount = amount.multiply(UNIT_INCH_TO_CM);
 			} else if (LengthTypeEnum.YARD == targetType) {
-				updatedAmount = BigDecimal.ONE.divide(amount.multiply(UNIT_YARD_TO_INCH), Constant.MC);
+				updatedAmount = BigDecimal.ONE.divide(amount.multiply(UNIT_YARD_TO_INCH));
 			} else if (LengthTypeEnum.FOOT == targetType) {
 				updatedAmount = amount.multiply(UNIT_INCH_TO_FT);
 			} else if (LengthTypeEnum.MILLIMETER == targetType) {
@@ -470,22 +471,22 @@ public class LengthManager {
 			}
 		} else if (sourceType == LengthTypeEnum.MILLIMETER) {
 			if (LengthTypeEnum.MILE == targetType) {
-				updatedAmount = BigDecimal.ONE.divide(fromMileToMilimeter(amount), Constant.MC);
+				updatedAmount = BigDecimal.ONE.divide(fromMileToMilimeter(amount));
 			} else if (LengthTypeEnum.KILOMETER == targetType) {
-				updatedAmount = BigDecimal.ONE.divide(fromKilometerToMillimeter(amount), Constant.MC);
+				updatedAmount = BigDecimal.ONE.divide(fromKilometerToMillimeter(amount));
 			} else if (LengthTypeEnum.METER == targetType) {
-				updatedAmount = BigDecimal.ONE.divide(fromMeterToMillimeter(amount), Constant.MC);
+				updatedAmount = BigDecimal.ONE.divide(fromMeterToMillimeter(amount));
 			} else if (LengthTypeEnum.CENTIMETER == targetType) {
-				updatedAmount = BigDecimal.ONE.divide(amount.multiply(UNIT_CM_TO_MM), Constant.MC);
+				updatedAmount = BigDecimal.ONE.divide(amount.multiply(UNIT_CM_TO_MM));
 			} else if (LengthTypeEnum.YARD == targetType) {
-				updatedAmount = BigDecimal.ONE.divide(fromYardToCentimeter(amount).multiply(UNIT_CM_TO_MM), Constant.MC);
+				updatedAmount = BigDecimal.ONE.divide(fromYardToCentimeter(amount).multiply(UNIT_CM_TO_MM));
 			} else if (LengthTypeEnum.FOOT == targetType) {
-				updatedAmount = BigDecimal.ONE.divide(amount.multiply(UNIT_FOOT_TO_CM).multiply(UNIT_CM_TO_MM), Constant.MC);
+				updatedAmount = BigDecimal.ONE.divide(amount.multiply(UNIT_FOOT_TO_CM).multiply(UNIT_CM_TO_MM));
 			} else if (LengthTypeEnum.INCHES == targetType) {
-				updatedAmount = BigDecimal.ONE.divide(fromInchToMillimeter(amount), Constant.MC);
+				updatedAmount = BigDecimal.ONE.divide(fromInchToMillimeter(amount));
 			}
 		}
-		return updatedAmount;
+		return updatedAmount.abs(Constant.MC);
 	}
 
 	/**
@@ -498,6 +499,6 @@ public class LengthManager {
 	 * @return the big decimal
 	 */
 	private final static BigDecimal divide(BigDecimal amount, BigDecimal conversion) {
-		return amount.multiply(BigDecimal.ONE.divide(conversion, Constant.MC));
+		return amount.multiply(BigDecimal.ONE.divide(conversion));
 	}
 }
