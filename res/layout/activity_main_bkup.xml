@@ -1,0 +1,67 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="org.chisty.uniconverter.MainActivity" >
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:text="Select Unit Type"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView android:text="FROM" />
+
+        <TextView android:text="TO" />
+    </TableRow>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#3B3B3B" />
+
+    <TableRow>
+
+        <Spinner
+            android:id="@+id/spinnerLeft"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawSelectorOnTop="true" />
+
+        <Spinner
+            android:id="@+id/spinnerRight"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawSelectorOnTop="true" />
+    </TableRow>
+
+    <TableRow>
+
+        <EditText
+            android:id="@+id/fromUnitTxt"
+            android:ems="8"
+            android:inputType="numberDecimal"
+            android:text="0" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/toUnitTxt"
+            android:ems="8"
+            android:inputType="numberDecimal"
+            android:text="0" >
+        </EditText>
+    </TableRow>
+
+</TableLayout>

@@ -1,0 +1,115 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context="org.chisty.uniconverter.MainActivity" >
+
+    <!-- android:background="#a39f9f" android:background="@drawable/shape" -->
+
+    <TableRow
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/shape" >
+
+        <!-- android:background="#9e9e9e" -->
+
+        <TextView
+            android:id="@+id/textView2"
+            android:padding="10dp"
+            android:text="SELECT AN UNIT TYPE"
+            android:textColor="#2621ce"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:padding="10dp" />
+    </TableRow>
+
+    <!-- Horizontal line -->
+
+
+    <!-- <ImageView -->
+    <!-- android:layout_width="fill_parent" -->
+    <!-- android:layout_height="1dp" -->
+    <!-- android:background="#3B3B3B" /> -->
+
+    <TableRow
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/shape"
+        android:padding="10dp" >
+
+        <GridLayout android:columnCount="2" >
+
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:text="From"
+                android:textColor="#bf2626"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinnerLeft"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:drawSelectorOnTop="true" />
+        </GridLayout>
+
+        <GridLayout android:columnCount="2" >
+
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:text="To"
+                android:textColor="#bf2626"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinnerRight"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:drawSelectorOnTop="true" />
+        </GridLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="15dp" >
+        <TextView android:text="Type any value in the &apos;From&apos; field and touch the &apos;To&apos; field to get the converted result" />
+    </TableRow>
+
+    <TableRow android:padding="5dp" >
+
+        <EditText
+            android:id="@+id/fromUnitTxt"
+            android:cursorVisible="true"
+            android:ems="8"
+            android:inputType="numberDecimal"
+            android:textColor="#F1F111" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/toUnitTxt"
+            android:ems="8"
+            android:inputType="numberDecimal"
+            android:textColor="#F1F111" >
+        </EditText>
+    </TableRow>
+
+    <TableRow android:padding="5dp" >
+
+        <Button
+            android:id="@+id/button1"
+            style="?android:attr/buttonStyleSmall"
+            android:text="Reset" />
+
+        <Button
+            android:id="@+id/button2"
+            style="?android:attr/buttonStyleSmall"
+            android:text="Exit" />
+    </TableRow>
+
+</TableLayout>
